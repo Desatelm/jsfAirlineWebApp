@@ -13,8 +13,8 @@
 	<h1>Flight List</h1>
 			
 		 <h:dataTable var="flight"  value="#{restFlightService.flightList}"   
-		        styleClass="order-table"
-    			headerClass="order-table-header"
+		        styleClass="order-table, column-table"
+    			headerClass="order-table-header"    			
     			rowClasses="order-table-odd-row,order-table-even-row" >
          <f:facet name = "header">
          <h:outputText value="Flight List" />
@@ -35,19 +35,19 @@
         <f:facet name = "header">
          <h:outputText value="Origin" />
          </f:facet>
-        <h:outputText value="#{flight.deptAirport}" />
+        <h:outputText value="#{flight.origin.name}" />
         </h:column> 
         <h:column >
         <f:facet name = "header">
          <h:outputText value="Destination" />
          </f:facet>
-        <h:outputText value="#{flight.destAirport}" />
+        <h:outputText value="#{flight.destination.name}" />
         </h:column> 
         <h:column >
         <f:facet name = "header">
          <h:outputText value="DepartureDate" />
          </f:facet>
-        <!-- <h:outputText value="#{flight.departureDate}" /> -->
+        <h:outputText value="#{flight.departureDate}" />
         </h:column>
         <h:column >
         <f:facet name = "header">
@@ -59,13 +59,13 @@
         <f:facet name = "header">
          <h:outputText value="Airplane" />
          </f:facet>
-        <h:outputText value="#{flight.airpLane}" />
+        <h:outputText value="#{flight.airplane}" />
         </h:column> 
         <h:column >
         <f:facet name = "header">
          <h:outputText value="Airline" />
          </f:facet>
-        <h:outputText value="#{flight.airLine}" />
+        <h:outputText value="#{flight.airline}" />
         </h:column>      
         </h:dataTable>
         <h:button value="HomePage" outcome="example5" />
