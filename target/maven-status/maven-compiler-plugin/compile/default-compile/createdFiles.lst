@@ -1,0 +1,14 @@
+edu\mum\waa\types\StudentIdConverter.class
+edu\mum\gf\workaround\JpaUtil.class
+edu\mum\waa\types\StudentIdValidator.class
+cs545\airline\model\Flight.class
+cs545\airline\model\Airport.class
+cs545\airline\model\Airplane.class
+edu\mum\gf\workaround\ResouceReleaseListener.class
+edu\mum\waa\jsf\beans\Visitor.class
+edu\mum\waa\jsf\beans\Navigator.class
+edu\mum\waa\jsf\beans\User.class
+edu\mum\waa\types\StudentId.class
+edu\mum\gf\workaround\CDIBeanManager.class
+cs545\airline\model\Airline.class
+edu\mum\cs545\ws\RestAirplaneService.class

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
+	<navigation-rule>
+		<from-view-id>faces/welcome.xhtml</from-view-id>
+		<!-- <navigation-case>
+			<from-outcome>createAccount</from-outcome>
+			<to-view-id>faces/createAccount.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>deposit</from-outcome>
+			<to-view-id>faces/deposit.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>withdraw</from-outcome>
+			<to-view-id>faces/withdraw.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>accountList</from-outcome>
+			<to-view-id>faces/accountList.xhtml</to-view-id>
+		</navigation-case>	 -->
+		<navigation-case>
+			<from-outcome>flightList</from-outcome>
+			<to-view-id>faces/flightList.xhtml</to-view-id>
+		</navigation-case>		
+	</navigation-rule>
+	<navigation-rule>
+	
+	<from-view-id>index.xhtml</from-view-id>
+		<navigation-case>		
+			<from-outcome>welcome</from-outcome>
+			<to-view-id>faces/welcome.xhtml</to-view-id>
+		</navigation-case>    	
+	</navigation-rule>
+	<navigation-rule>
+	<from-view-id>faces/flightList.xhtml</from-view-id>
+		<navigation-case>		
+			<from-outcome>example5</from-outcome>
+			<to-view-id>faces/welcome.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- <navigation-rule>
+		<from-view-id>/faces/createAccount.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/index.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/faces/deposit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/faces/hello.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/faces/withdraw.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>result</from-outcome>
+			<to-view-id>faces/studentId.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule> -->
+
+
+</faces-config>

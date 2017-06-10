@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<title>Flight List</title>
+	<h:outputStylesheet library="css" name="mystyle.css"  />	
+</h:head>
+<h:body>
+	<h1>Flight List</h1>
+			
+		 <h:dataTable var="flight"  value="#{restFlightService.flightList}"   
+		        styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row" >
+         <f:facet name = "header">
+         <h:outputText value="Flight List" />
+         </f:facet>
+         <h:column >
+         <f:facet name = "header">
+         <h:outputText value="Id" />
+         </f:facet>
+        <h:outputText value="#{flight.id}" />
+        </h:column>
+        <h:column >
+        <f:facet name = "header">
+         <h:outputText value="FlightNumber" />
+         </f:facet>
+         <h:outputText value="#{flight.flightnr}" />
+        </h:column>
+        <h:column >
+        <f:facet name = "header">
+         <h:outputText value="Origin" />
+         </f:facet>
+        <h:outputText value="#{flight.deptAirport}" />
+        </h:column> 
+        <h:column >
+        <f:facet name = "header">
+         <h:outputText value="Destination" />
+         </f:facet>
+        <h:outputText value="#{flight.destAirport}" />
+        </h:column> 
+        <h:column >
+        <f:facet name = "header">
+         <h:outputText value="DepartureDate" />
+         </f:facet>
+        <!-- <h:outputText value="#{flight.departureDate}" /> -->
+        </h:column>
+        <h:column >
+        <f:facet name = "header">
+         <h:outputText value="Departuretime" />
+         </f:facet>
+        <h:outputText value="#{flight.departureTime}" />
+        </h:column> 
+        <h:column >
+        <f:facet name = "header">
+         <h:outputText value="Airplane" />
+         </f:facet>
+        <h:outputText value="#{flight.airpLane}" />
+        </h:column> 
+        <h:column >
+        <f:facet name = "header">
+         <h:outputText value="Airline" />
+         </f:facet>
+        <h:outputText value="#{flight.airLine}" />
+        </h:column>      
+        </h:dataTable>
+        <h:button value="HomePage" outcome="example5" />
+        
+	
+</h:body>
+</html>
