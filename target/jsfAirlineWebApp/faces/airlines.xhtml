@@ -34,13 +34,19 @@
         <f:facet name = "header">
          <h:outputText value="Action" /></f:facet>
          <h:panelGrid columns = "2">
-         <h:commandButton value="#{airline.editable?'Save':'Edit'}" action="#{serviceHelper.changeEditStatus(airline.name)}" />
+         <h:commandButton value="#{airline.editable?'Save':'Edit'}" action="#{serviceHelper.changeEditStatus(airline)}" />
          <h:commandButton value="DELETE" action="#{restAirlineService.deleteAirline(airline.name)}" immediate="true"/>
          </h:panelGrid>
         </h:column> 	
 		</h:dataTable>		
-		<br />
-		<h:button value="Create" outcome="create" />
+		
+		<h:form >
+		<h:panelGrid columns="2">			
+			<h:inputText value="#{restAirlineService.name}" />				
+			<h:commandButton   value="Create"  action="#{restAirlineService.createAirline}"/>
+		</h:panelGrid>
+			
+  </h:form>
 	    <h:button value="HomePage" outcome="welcome" />
 			
 		

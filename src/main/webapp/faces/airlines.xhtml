@@ -39,8 +39,14 @@
          </h:panelGrid>
         </h:column> 	
 		</h:dataTable>		
-		<br />
-		<h:button value="Create" outcome="create" />
+		
+		<h:form >
+		<h:panelGrid columns="2">			
+			<h:inputText value="#{restAirlineService.name}" />				
+			<h:commandButton   value="Create"  action="#{restAirlineService.createAirline}"/>
+		</h:panelGrid>
+			
+  </h:form>
 	    <h:button value="HomePage" outcome="welcome" />
 			
 		
