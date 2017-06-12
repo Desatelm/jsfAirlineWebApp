@@ -1,5 +1,7 @@
 package edu.mum.cs545.ws;
 
+
+import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -20,29 +22,61 @@ import cs545.airline.service.AirlineService;
 
 @Named
 @ApplicationScoped 
-public class RestAirlineService {
+public class RestAirlineService implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	private String name;	
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	List<Airline> airlines ;
 	@Inject
 	private AirlineService airlineService;
-	Flight test = new Flight();
+	
 
-	@GET
-	public String helloWorld(@DefaultValue("Gorgeous") @QueryParam("name") String name) {
-		return "Hello " + name + "!";
+	public List<Airline> getAirlines() {
+		return airlines;
 	}
+
+	public void setAirlines(List<Airline> airlines) {
+		this.airlines = airlines;
+	}
+	
 	
 	@Path("create")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@POST
-	public String  createAirline(Airline airline) {
+	public String  createAirline() {
+		Airline airline = new Airline();
+		airline.setName(this.name);
 		airlineService.create(airline);
-		return "name: "+ airline.getName()+ "\nId: "+ airline.getId() + "\nsuccessfully created";
+		airlines = airlineService.findAll();
+		return "airlines";
 	}
-	 
-	@Path("delet")	
+
+	 {}
+	@Path("delete")	
+	@Consumes(MediaType.APPLICATION_JSON)
 	@DELETE
-	public void  deleteAirline(Airline airport) {
-		airlineService.delete(airport);
+	public String  deleteAirline(String name) {
+		
+		try{
+		Airline airline = airlineService.findByName(name);		
+		airlineService.delete(airline);
+		airlines = airlineService.findAll();		
+	   }
+		catch(Exception e){
+			
+				e.printStackTrace();
+				}
+		
+		return "airlines";
 	}
 	
 	@Path("airline")
@@ -60,24 +94,21 @@ public class RestAirlineService {
     
 	@Path("name")
 	@GET
-	public String getAirlineTest(@QueryParam("name") String name) {
-		String result = "Nil!";		
-		Airline airline = airlineService.findByName(name);		
-			result = "This is an airline: " + airline.getName();		
-		return result;
+	public Airline getbyname( String name) {		 		
+					
+		return airlineService.findByName(name);
 	}
 	
 	@Path("list")
 	@GET
-	public List<Airline> getListAirline() {
-		String result = "Nil!";
-		
-		List<Airline> airlines = airlineService.findAll();		
-		for (Airline airline: airlines) {
-			result = "This is an airline: " + airline.getName();
-			System.out.println(result);
-		}
-		return airlines;
+	public String findAll() {
+			
+		 airlines = airlineService.findAll();		
+		 for(Airline airline:airlines)
+		 {
+			 airline.setEditable(false);
+		 }
+		return "airlines";
 	}
 
 }

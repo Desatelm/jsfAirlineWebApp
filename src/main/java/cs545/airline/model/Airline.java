@@ -1,14 +1,17 @@
 package cs545.airline.model;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 
 @Entity
@@ -18,9 +21,20 @@ public class Airline {
 	@GeneratedValue
 	private long id;
 	private String name;
-	@OneToMany(mappedBy = "airline")
+	
+	@OneToMany(mappedBy = "airline", cascade= CascadeType.ALL)
 	@OrderBy("departureDate, departureTime")
-	private List<Flight> flights;
+	private List<Flight> flights = new ArrayList<>();	
+    
+	@Transient
+	private boolean editable;
+	public boolean isEditable() {
+		return editable;
+	}
+
+	public void setEditable(boolean editable) {
+		this.editable = editable;
+	}
 
 	/* Constructors */
 	public Airline() {
@@ -67,10 +81,5 @@ public class Airline {
 			success = true;
 		}
 		return success;
-	}
-	@Override
-	public String toString(){
-		return this.getName();
-		
 	}
 }

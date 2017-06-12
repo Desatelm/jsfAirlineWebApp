@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head ><title>StarX Airliners</title>
+<h:outputStylesheet library="css" name="mystyle.css"  />
+</h:head>
+<h:body >
+  <h:form>
+		
+			<h3>AirPlane</h3>
+			<h:dataTable var="airplane"  value="#{restAirplaneService.airplanes}"   
+		        styleClass="order-table, column-table"
+    			headerClass="order-table-header"    			
+    			rowClasses="order-table-odd-row,order-table-even-row" >
+         <f:facet name = "header">
+         <h:outputText value="Airline List" />
+         </f:facet>
+         <h:column >
+         <f:facet name = "header">
+         <h:outputText value="Id" />
+         </f:facet>
+        <h:outputText value="#{airplane.id}" />
+        </h:column>
+        
+        <h:column >
+        <f:facet name = "header">
+         <h:outputText value="Serial num" />
+         </f:facet>
+         <h:outputText value="#{airplane.serialnr}" />
+        </h:column> 
+        
+        <h:column >
+        <f:facet name = "header">
+         <h:outputText value="Model" />
+         </f:facet>
+         <h:outputText value="#{airplane.model}" />
+        </h:column> 
+               
+        <h:column >
+        <f:facet name = "header">
+         <h:outputText value="Capacity" />
+         </f:facet>
+         <h:outputText value="#{airplane.capacity}" />
+        </h:column>     
+       
+		</h:dataTable>		
+		<h:button value="HomePage" outcome="welcome" />
+	</h:form>
+</h:body>
+</html>

@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14963498823916" configfile="/jsfWebApp/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="562" id="pf14963501828817" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf14964190667062 pf14964190667063 pf14964190667064 pf14964190667065 pf14970479892831" inlinks="pf149642110332228 pf14970483007114" path="faces/welcome.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/createAccount.xhtml" x="554" y="178" id="pf14964190667077" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14964190667062" path="faces/createAccount.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/deposit.xhtml" x="554" y="562" id="pf14964190667078" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14964190667063" path="faces/deposit.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/withdraw.xhtml" x="554" y="946" id="pf14964190667079" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf14964190667064" path="faces/withdraw.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/accountList.xhtml" x="122" y="562" id="pf149641906670710" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf14964190667065" path="faces/accountList.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/createAccount.xhtml" x="122" y="1330" id="pf149641915295412" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf149641915295413 pf149641915295414" path="/faces/createAccount.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/index.xhtml" x="338" y="1202" id="pf149641915295415" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf149641915295413" path="/faces/index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="1586" id="pf149641915295416" referenceLink="//@navigationRule.5/@navigationCase.1/@toViewId|" inlinks="pf149641915295414 pf149641915295417 pf149641915295418" path="/index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/deposit.xhtml" x="122" y="1714" id="pf149641915295419" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf149641915295420 pf149641915295417" path="/faces/deposit.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/hello.xhtml" x="338" y="1970" id="pf149641915295421" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf149641915295420" path="/faces/hello.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/withdraw.xhtml" x="122" y="2098" id="pf149641915295422" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf149641915295423 pf149641915295418" path="/faces/withdraw.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/studentId.xhtml" x="338" y="2354" id="pf149641915295424" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf149641915295423" path="faces/studentId.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="946" id="pf149641915295525" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf149642110332228" path="index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/welcome.xhtml" x="122" y="2483" id="pf149641915295527" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" path="faces/welcome.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="faces/flightList.xhtml" id="pf14970479892993" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14970483007114" inlinks="pf14970479892831" path="faces/flightList.xhtml"/>
-  <links id="pf14964190667062" target="pf14964190667077" source="pf14963501828817"/>
-  <links id="pf14964190667063" target="pf14964190667078" source="pf14963501828817"/>
-  <links id="pf14964190667064" target="pf14964190667079" source="pf14963501828817"/>
-  <links id="pf14964190667065" target="pf149641906670710" source="pf14963501828817"/>
-  <links id="pf149641915295413" target="pf149641915295415" source="pf149641915295412"/>
-  <links id="pf149641915295414" target="pf149641915295416" source="pf149641915295412"/>
-  <links id="pf149641915295420" target="pf149641915295421" source="pf149641915295419"/>
-  <links id="pf149641915295417" target="pf149641915295416" source="pf149641915295419"/>
-  <links id="pf149641915295423" target="pf149641915295424" source="pf149641915295422"/>
-  <links id="pf149641915295418" target="pf149641915295416" source="pf149641915295422"/>
-  <links id="pf149642110332228" target="pf14963501828817" source="pf149641915295525"/>
-  <links id="pf14970479892831" target="pf14970479892993" source="pf14963501828817"/>
-  <links id="pf14970483007114" target="pf14963501828817" source="pf14970479892993"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/createAccount.xhtml" x="122" y="178" id="pf14964190667077" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" path="faces/createAccount.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/createAccount.xhtml" x="122" y="1714" id="pf149641915295412" referenceLink="//@navigationRule.3/@fromViewId|" path="/faces/createAccount.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/index.xhtml" x="122" y="2098" id="pf149641915295415" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" path="/faces/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="2482" id="pf149641915295416" referenceLink="//@navigationRule.5/@navigationCase.1/@toViewId|" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/deposit.xhtml" x="122" y="2866" id="pf149641915295419" referenceLink="//@navigationRule.4/@fromViewId|" path="/faces/deposit.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/hello.xhtml" x="122" y="4018" id="pf149641915295421" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" path="/faces/hello.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/withdraw.xhtml" x="122" y="4402" id="pf149641915295422" referenceLink="//@navigationRule.5/@fromViewId|" path="/faces/withdraw.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/studentId.xhtml" x="122" y="4786" id="pf149641915295424" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" path="faces/studentId.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/welcome.xhtml" id="pf14971314127290" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf14971314127291 pf14971314127292" inlinks="pf14971314127293 pf14971314127294" path="faces/welcome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/flightList.xhtml" id="pf14971314127295" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14971314127294" inlinks="pf14971314127291" path="faces/flightList.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf14971314127296" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14971314127293" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="faces/airlines.xhtml" id="pf14971314127297" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14971314127292" path="faces/airlines.xhtml"/>
+  <links id="pf14971314127291" target="pf14971314127295" source="pf14971314127290" outcome="flightList"/>
+  <links id="pf14971314127293" target="pf14971314127290" source="pf14971314127296" outcome="welcome"/>
+  <links id="pf14971314127294" target="pf14971314127290" source="pf14971314127295" outcome="welcome"/>
+  <links id="pf14971314127292" target="pf14971314127297" source="pf14971314127290" outcome="airlines"/>
 </pageflow:Pageflow>

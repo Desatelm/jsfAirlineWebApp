@@ -17,18 +17,54 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import cs545.airline.model.Airline;
-import cs545.airline.model.Airplane;
 import cs545.airline.model.Airport;
 import cs545.airline.model.Flight;
+import cs545.airline.service.AirlineService;
+import cs545.airline.service.AirportService;
 import cs545.airline.service.FlightService;
 
 @Named
 @ApplicationScoped 
 public class RestFlightService implements Serializable {
 	
+	private String airlineQ;
+	private String origin;
+	private String destination;
+	
+	public String getOrigin() {
+		return origin;
+	}
+
+	public void setOrigin(String origin) {
+		this.origin = origin;
+	}
+
+	public String getDestination() {
+		return destination;
+	}
+
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+	public String getAirlineQ() {
+		return airlineQ;
+	}
+
+	public void setAirlineQ(String airlineQ) {
+		this.airlineQ = airlineQ;
+	}
+
+
+
 	private static final long serialVersionUID = 1L;
 	@Inject
 	private FlightService flightService;
+	@Inject
+	private AirlineService airlineServic;	
+	@Inject
+	private AirportService airportService;
+	
 	private List<Flight> flightList = new ArrayList<Flight>();
 	
 
@@ -39,21 +75,7 @@ public class RestFlightService implements Serializable {
 	public void setFlightList(ArrayList<Flight> flightList) {
 		this.flightList = flightList;
 	}
-
-	@Path("create")
-	@Consumes(MediaType.APPLICATION_JSON)
-	@POST
-	public void  createFlight(Flight flight) {
-		flightService.create(flight);
-	}
 	 
-	@Path("delete")
-	@Consumes(MediaType.APPLICATION_JSON)
-	@DELETE
-	public void delete(Flight flight) {
-		flightService.delete(flight);
-	}
-    
 	@Path("update")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@POST
@@ -71,66 +93,49 @@ public class RestFlightService implements Serializable {
 	@Path("findBynumber")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@GET
-	public List<Flight> findByNumber(String flightnr) {
-		return flightService.findByNumber(flightnr);
+	public String findByNumber() {
+		
+     flightList =  flightService.findByNumber(airlineQ);	
+		
+		return  "flightList";
 	}
     
 	@Path("findByAirline")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@GET
-	public List<Flight> findByAirline(Airline airline) {
-		return flightService.findByAirline(airline);
+	public String findByAirline() {
+		
+		Airline airline = airlineServic.findByName(airlineQ);
+		flightList =  flightService.findByAirline(airline);	
+		
+		return  "flightList";
 	}
     
 	@Path("findByOrigin")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@GET
-	public List<Flight> findByOrigin(Airport airport) {
-		return flightService.findByOrigin(airport);
+	public String findByOrigin() {
+		
+		Airport airport = airportService.findByCode(origin);
+		flightList = flightService.findByOrigin(airport);
+		return  "flightList";
 	}
 	
 	@Path("findByDestination")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@GET
-	public List<Flight> findByDestination(Airport airport) {
-		return flightService.findByDestination(airport);
+	public String findByDestination() {
+		Airport airport = airportService.findByCode(destination);
+		flightList = flightService.findByDestination(airport);
+		return  "flightList";
 	}
     
-	@Path("findByAirplaneArrival")
-	@Consumes(MediaType.APPLICATION_JSON)
-	@GET
-	public List<Flight> findByArrival(Airplane airplane) {
-		return flightService.findByArrival(airplane);
-	}
-
 	@Path("findByArrival")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@GET
 	public List<Flight> findByDateArrival(Date datetime) {
 		return flightService.findByArrival(datetime);
-	}
-
-	/*@Path("findByArrivalBetween")
-	@Produces(MediaType.APPLICATION_JSON)
-	@GET
-	public List<Flight> findByArrivalBetween1(Date datetimeFrom, Date datetimeTo) {
-		return flightService.findByArrivalBetween(datetimeFrom, datetimeTo);
-	}
-
-	@Path("findByDeparture")
-	@Produces(MediaType.APPLICATION_JSON)
-	@GET
-	public List<Flight> findByDeparture1(Date datetime) {
-		return flightService.findByDeparture(datetime);
-	}
-    
-	@Path("findByDepartureBetween")
-	@Produces(MediaType.APPLICATION_JSON)
-	@GET
-	public List<Flight> findByDepartureBetween1(Date datetimeFrom, Date datetimeTo) {
-		return flightService.findByDepartureBetween(datetimeFrom, datetimeTo);
-	}*/
-   
+	}	
 	
 	public String findAll() {
 	  flightList =  flightService.findAll();
